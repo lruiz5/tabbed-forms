@@ -1,0 +1,40 @@
+40. Under carriage-clean and secure
+39. Wheel seals-leaks and/or condition
+38. Transmission and differential-mounting, leaks, and/or condition
+37. Drive shaft, universal joints, and/or guards
+36. Frame and cross members-cracks and/or condition
+35. Suspension system-springs, shackles, u-bolts, and/or torque rods
+34. Connecting devices- fifth wheel, pintle hitch, and/or safety devices
+33. Steering arms, drag links, and/or tie rod ends
+32. Steering system-mounting, free lash, and components
+31. Brakes release after complete loss of service air
+30. Emergency stopping system-labeled and operative
+29. Parking brake-able to hold the vehicle
+28. Wheels, lug nuts, and studs-cracks, looseness, and/or condition
+27. Tires-tread depth, inflation, and condition
+26. Other air tank-drain and check for contamination; securement
+25. Primary air tank-drain and test check valve
+24. Air compressor governor cut-in and cut-out pressures (85-130)
+23. 1 minute air or vacuum loss test
+22. Air brake system-adjustment, components, and/or condition
+21. Hoses and tubing-condition and protection
+20. Hydraulic master cylinder level, leaks, and/or condition
+19. Hydraulic brake system-adjustment, components, and/or condition
+18. Tractor-protection valve
+17. Starting and charging system
+16. Air filter, throttle linkage
+15. Clutch adjustment-free play
+14. Engine-mounting, excessive grease and/or oil
+13. Exhaust system, manifolds, piping, muffler; leaks and/or condition
+12. Fuel system-tank, hoses, tubing, and/or pump; leaks
+11. Air hoses and tubing leaks, condition, and/or protection
+10. Belts-compressor, fan, water pump, and/or alternator
+9. Radiator and water hoses- coolant level, condition, and/or leaks
+8. Warning devices-air, oil, temperature, anti skid, and/or vacuum
+7. Batteries-water level, terminals, and cables
+6. Electrical wiring-condition and protection
+5. All lights, signals, reflectors, mudflaps
+4. Windshield wipers, window cracks
+3. Mirrors and supports
+2. Horn, defroster, gauges, odometer, and speedometer
+1. Fire extinguisher and reflective warning devices
