@@ -15,7 +15,7 @@ export function NothingToSeeHere() {
     <Card className="w-[350px]">
       <CardHeader>
         <CardTitle>Nothing to See Here!</CardTitle>
-        <CardDescription>Looks like you're lost...</CardDescription>
+        <CardDescription>Looks like you&apos;re lost...</CardDescription>
       </CardHeader>
       <CardContent></CardContent>
       <CardFooter className="flex justify-between">
