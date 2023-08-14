@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Vehicle {
+  id          Int          @id @default(autoincrement())
+  carrierName String?
+  unitNum     String?
+  year        String?
+  make        String?
+  licenseNum  String?
+  active      Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @default(now())
+  inspections Inspection[]
+}
+
+model Inspector {
+  id          Int          @id @default(autoincrement())
+  name        String?
+  initials    String?
+  active      Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @default(now())
+  inspections Inspection[]
+}
+
+model Inspection {
+  id                Int       @id @default(autoincrement())
+  inspector         Inspector @relation(fields: [inspectorId], references: [id])
+  inspectorId       Int
+  vehicle           Vehicle   @relation(fields: [vehicleId], references: [id])
+  vehicleId         Int
+  mileage           String    @default("")
+  month             String    @default(dbgenerated("(CAST(strftime('%m', 'now') AS TEXT))"))
+  year              String    @default(dbgenerated("(CAST(strftime('%Y', 'now') AS TEXT))"))
+  fireExtinguisher  String    @default("")
+  hornDefroster     String    @default("")
+  mirrorsAnd        String    @default("")
+  windshieldWipers  String    @default("")
+  allLights         String    @default("")
+  electricalWiring  String    @default("")
+  batteriesWater    String    @default("")
+  warningDevices    String    @default("")
+  radiatorAnd       String    @default("")
+  beltsCompressors  String    @default("")
+  airHoses          String    @default("")
+  fuelSystem        String    @default("")
+  exhaustSystem     String    @default("")
+  engineMounting    String    @default("")
+  clutchAdjustment  String    @default("")
+  airFilter         String    @default("")
+  startingAnd       String    @default("")
+  tractorProtection String    @default("")
+  hydraulicBrake    String    @default("")
+  hydraulicMaster   String    @default("")
+  hosesAnd          String    @default("")
+  airBrake          String    @default("")
+  minuteTest        String    @default("")
+  airCompressor     String    @default("")
+  primaryAir        String    @default("")
+  otherAir          String    @default("")
+  tiresTread        String    @default("")
+  wheelsLugnuts     String    @default("")
+  parkingBrake      String    @default("")
+  emergencyStopping String    @default("")
+  brakesRelease     String    @default("")
+  steeringSystem    String    @default("")
+  steeringArms      String    @default("")
+  connectingDevices String    @default("")
+  suspensionSystem  String    @default("")
+  frameAnd          String    @default("")
+  driveShaft        String    @default("")
+  transmissionAnd   String    @default("")
+  wheelSeals        String    @default("")
+  underCarriage     String    @default("")
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @default(now())
+}

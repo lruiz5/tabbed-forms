@@ -44,7 +44,7 @@ const items = [
   },
 ] 
 
-const displayFormSchema = z.object({
+const otherFormSchema = z.object({
   items: z.array(z.string()).refine((value) => value.some((item) => item), {
     message: "You have to select at least one item.",
   }),
@@ -56,9 +56,9 @@ const defaultValues = {
   items: ["recents", "home"],
 }
 
-export function DisplayForm() {
+export function OtherForm() {
   const form = useForm({
-    resolver: zodResolver(displayFormSchema),
+    resolver: zodResolver(otherFormSchema),
     defaultValues,
   })
 

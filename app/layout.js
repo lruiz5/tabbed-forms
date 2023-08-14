@@ -2,39 +2,37 @@ import "./globals.css";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { SidebarNav } from "@/components/sidebar-nav";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
-  title: "Forms",
-  description: "Advanced form example using react-hook-form and Zod.",
+  title: "Maintenance & Safety Inspection",
+  description: "Maintenance & Safety Inspection",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 const sidebarNavItems = [
   {
-    title: "Profile",
+    title: "Maintenance & Safety",
     href: "/",
   },
   {
-    title: "Account",
-    href: "/account",
+    title: "Second Form",
+    href: "/secondary",
   },
   {
-    title: "Appearance",
-    href: "/appearance",
-  },
-  {
-    title: "Notifications",
-    href: "/notifications",
-  },
-  {
-    title: "Display",
-    href: "/display",
+    title: "Third Form",
+    href: "/tertiary",
   },
 ];
 
 export default function SettingsLayout({ children }) {
   return (
     <html>
-      <body className="p-12">
+      <body className="p-10">
         <div className="overflow-hidden rounded-[0.5rem] border bg-background shadow">
           <div className="md:hidden">
             <Image
@@ -52,11 +50,13 @@ export default function SettingsLayout({ children }) {
               className="hidden dark:block"
             />
           </div>
-          <div className="hidden space-y-6 p-10 pb-16 md:block">
+          <div className="hidden space-y-6 px-10 py-7 pb-12 md:block">
             <div className="space-y-0.5">
-              <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Vehicle Maintenance & Safety Inspection
+              </h2>
               <p className="text-muted-foreground">
-                Manage your account settings and set e-mail preferences.
+                STATE OF CALIFORNIA DEPARTMENT OF CALIFORNIA HIGHWAY PATROL
               </p>
             </div>
             <Separator className="my-6" />
@@ -68,6 +68,7 @@ export default function SettingsLayout({ children }) {
             </div>
           </div>{" "}
         </div>
+        <Toaster />
       </body>
     </html>
   );

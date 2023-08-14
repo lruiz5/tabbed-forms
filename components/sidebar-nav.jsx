@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 
 export function SidebarNav({ className, items, ...props }) {
   const pathname = usePathname();
@@ -33,5 +32,5 @@ export function SidebarNav({ className, items, ...props }) {
         </Link>
       ))}
     </nav>
-  )
+  );
 }

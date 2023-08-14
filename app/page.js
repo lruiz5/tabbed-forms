@@ -1,17 +1,17 @@
 import { Separator } from "@/components/ui/separator";
-import { ProfileForm } from "@/app/profile-form";
+import { TabList } from "@/app/primary-form";
 
-export default function SettingsProfilePage() {
+export default function PageOne() {
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-medium">Profile</h3>
+      {/* <div>
+        <h3 className="text-lg font-medium">Page One</h3>
         <p className="text-sm text-muted-foreground">
-          This is how others will see you on the site.
+          This is page one of the Maintenance & Safety Inspection.
         </p>
       </div>
-      <Separator />
-      <ProfileForm />
+      <Separator /> */}
+      <TabList />
     </div>
   );
 }
