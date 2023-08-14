@@ -56,7 +56,6 @@ export async function POST(req: Request, res: NextResponse) {
     body.inspectorId = parseInt(inspectorId);
     body.vehicleId = parseInt(vehicleId);
 
-    console.log(body);
     // Create a new inspection entry
     const newInspection = await prisma.inspection.create({
       data: body,

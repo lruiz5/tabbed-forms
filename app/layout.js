@@ -34,22 +34,6 @@ export default function SettingsLayout({ children }) {
     <html>
       <body className="p-10">
         <div className="overflow-hidden rounded-[0.5rem] border bg-background shadow">
-          <div className="md:hidden">
-            <Image
-              src="/examples/forms-light.png"
-              width={1280}
-              height={791}
-              alt="Forms"
-              className="block dark:hidden"
-            />
-            <Image
-              src="/examples/forms-dark.png"
-              width={1280}
-              height={791}
-              alt="Forms"
-              className="hidden dark:block"
-            />
-          </div>
           <div className="hidden space-y-6 px-10 py-7 pb-12 md:block">
             <div className="space-y-0.5">
               <h2 className="text-2xl font-bold tracking-tight">

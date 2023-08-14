@@ -59,7 +59,7 @@ export function Combobox({ dataType, items, selectedItem, setSelectedItem }) {
                 <CheckIcon
                   className={cn(
                     "ml-auto h-4 w-4",
-                    selectedItem === item ? "opacity-100" : "opacity-0"
+                    selectedItem.id === item.id ? "opacity-100" : "opacity-0"
                   )}
                 />
               </CommandItem>

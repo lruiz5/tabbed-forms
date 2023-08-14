@@ -146,7 +146,7 @@ export function TabList() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
         <div className="flex flex-row">
           <FormItem className="flex flex-col mr-4">
             <FormLabel>Month</FormLabel>
@@ -157,7 +157,6 @@ export function TabList() {
               setSelectedItem={(month) => setSelectedMonth(month)}
             />
           </FormItem>
-
           <FormItem className="flex flex-col mr-4">
             <FormLabel>Inspector</FormLabel>
             <Combobox
@@ -212,8 +211,8 @@ export function TabList() {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="first">
-            <Card>
-              <CardContent className="space-y-2">
+            <Card className="pt-2">
+              <CardContent className="space-y-2.5">
                 {primary.map((question) => (
                   <FormField
                     key={question.name}
@@ -221,7 +220,9 @@ export function TabList() {
                     name={question.name}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{question.question}</FormLabel>
+                        <FormLabel>
+                          {question.id}. {question.question}
+                        </FormLabel>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
@@ -265,7 +266,9 @@ export function TabList() {
                     name={question.name}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{question.question}</FormLabel>
+                        <FormLabel>
+                          {question.id}. {question.question}
+                        </FormLabel>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
@@ -300,14 +303,16 @@ export function TabList() {
           <TabsContent value="third">
             <Card>
               <CardContent className="space-y-2">
-                {tertiary.map((question) => (
+                {tertiary.map((question, index) => (
                   <FormField
                     key={question.name}
                     control={form.control}
                     name={question.name}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{question.question}</FormLabel>
+                        <FormLabel>
+                          {question.id}. {question.question}
+                        </FormLabel>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
@@ -351,7 +356,9 @@ export function TabList() {
                     name={question.name}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{question.question}</FormLabel>
+                        <FormLabel>
+                          {question.id}. {question.question}
+                        </FormLabel>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
