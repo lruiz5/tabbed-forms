@@ -52,7 +52,7 @@ const formSchema = z.object({
   vehicleId: z.string().optional(),
   mileage: z
     .string()
-    .max(6, { message: "Mileage cannot be longer than 6 characters" }),
+    .max(7, { message: "Mileage cannot be longer than 7 characters" }),
   fireExtinguisher: z.string().optional(),
   hornDefroster: z.string().optional(),
   mirrorsAnd: z.string().optional(),
@@ -105,13 +105,16 @@ export function TabList() {
     resolver: zodResolver(formSchema),
     mode: "onChange",
   });
+  const handleBulkUpdate = (questionSet) => {
+    questionSet.map((question) => {
+      form.setValue(question.name, "OK");
+    });
+  };
 
   const onSubmit = async (data) => {
     data.inspectorId = selectedInspector.id;
     data.vehicleId = selectedVehicle.id;
     data.month = selectedMonth.id;
-
-    console.log(data);
 
     try {
       const response = await fetch("/api/inspections", {
@@ -218,6 +221,7 @@ export function TabList() {
                     key={question.name}
                     control={form.control}
                     name={question.name}
+                    {...form.register(question.name)}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
@@ -227,6 +231,7 @@ export function TabList() {
                           <RadioGroup
                             onValueChange={field.onChange}
                             defaultValue={field.value}
+                            value={field.value}
                             className="flex flex-row"
                           >
                             <FormItem className="flex items-center space-x-3 space-y-0">
@@ -250,6 +255,13 @@ export function TabList() {
                 ))}
               </CardContent>
               <CardFooter>
+                <Button
+                  type="button"
+                  className="mr-96"
+                  onClick={() => handleBulkUpdate(primary)}
+                >
+                  Select All
+                </Button>
                 <Button onClick={() => setActiveTab("second")}>
                   Next Page
                 </Button>
@@ -264,6 +276,7 @@ export function TabList() {
                     key={question.name}
                     control={form.control}
                     name={question.name}
+                    {...form.register(question.name)}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
@@ -273,6 +286,7 @@ export function TabList() {
                           <RadioGroup
                             onValueChange={field.onChange}
                             defaultValue={field.value}
+                            value={field.value}
                             className="flex flex-row"
                           >
                             <FormItem className="flex items-center space-x-3 space-y-0">
@@ -296,6 +310,13 @@ export function TabList() {
                 ))}
               </CardContent>
               <CardFooter>
+                <Button
+                  type="button"
+                  className="mr-96"
+                  onClick={() => handleBulkUpdate(secondary)}
+                >
+                  Select All
+                </Button>
                 <Button onClick={() => setActiveTab("third")}>Next Page</Button>
               </CardFooter>
             </Card>
@@ -308,6 +329,7 @@ export function TabList() {
                     key={question.name}
                     control={form.control}
                     name={question.name}
+                    {...form.register(question.name)}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
@@ -317,6 +339,7 @@ export function TabList() {
                           <RadioGroup
                             onValueChange={field.onChange}
                             defaultValue={field.value}
+                            value={field.value}
                             className="flex flex-row"
                           >
                             <FormItem className="flex items-center space-x-3 space-y-0">
@@ -340,6 +363,13 @@ export function TabList() {
                 ))}
               </CardContent>
               <CardFooter>
+                <Button
+                  type="button"
+                  className="mr-96"
+                  onClick={() => handleBulkUpdate(tertiary)}
+                >
+                  Select All
+                </Button>
                 <Button onClick={() => setActiveTab("fourth")}>
                   Next Page
                 </Button>
@@ -354,6 +384,7 @@ export function TabList() {
                     key={question.name}
                     control={form.control}
                     name={question.name}
+                    {...form.register(question.name)}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
@@ -363,6 +394,7 @@ export function TabList() {
                           <RadioGroup
                             onValueChange={field.onChange}
                             defaultValue={field.value}
+                            value={field.value}
                             className="flex flex-row"
                           >
                             <FormItem className="flex items-center space-x-3 space-y-0">
@@ -386,6 +418,13 @@ export function TabList() {
                 ))}
               </CardContent>
               <CardFooter>
+                <Button
+                  type="button"
+                  className="mr-96"
+                  onClick={() => handleBulkUpdate(quarternary)}
+                >
+                  Select All
+                </Button>
                 <Button type="submit">Submit</Button>
               </CardFooter>
             </Card>

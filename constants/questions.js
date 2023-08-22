@@ -9,7 +9,11 @@ export const primary = [
     name: "hornDefroster",
     question: "Horn, defroster, gauges, odometer, and speedometer",
   },
-  { id: "3", name: "mirrorsAnd", question: "Mirrors and supports" },
+  {
+    id: "3",
+    name: "mirrorsAnd",
+    question: "Mirrors and supports",
+  },
   {
     id: "4",
     name: "windshieldWipers",
